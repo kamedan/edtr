@@ -14,6 +14,7 @@ var index = require('./routes/index');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 var users = require('./routes/users');
+var tasks = require('./routes/task');
 
 require('./passport');
 
@@ -61,9 +62,12 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', index);
+app.use('/', tasks);
 app.use('/user', users);
 app.use('/about', about);
 app.use('/contact', contact);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
